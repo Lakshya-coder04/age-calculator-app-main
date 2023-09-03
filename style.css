@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+
+/* - Font size (inputs): 32px */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--Off-white);
+}
+
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  margin: 30px 0;
+  border-radius: 20px 20px 90px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* @ input field styles goes here */
+.text-input-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding-right: 100px;
+}
+
+.day,
+.month,
+.year {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--Smokey-grey);
+}
+
+label {
+  font-size: 12px;
+  letter-spacing: 1.3px;
+}
+
+input {
+  margin: 0 20px;
+  text-align: left;
+}
+
+input[type='number'] {
+  font-size: 18px;
+  width: 120px;
+  height: 50px;
+  padding: 0px 8px;
+  margin-left: 5px;
+  box-sizing: border-box;
+  border: 2px solid var(--Light-grey);
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+input[type='number']::placeholder {
+  padding: 12px;
+  text-align: left;
+}
+
+#dayError,
+#monthError,
+#yearError {
+  font-style: italic;
+  font-size: 12px;
+  color: var(--light-red);
+  visibility: hidden;
+  padding: 5px;
+}
+
+.line-arrow {
+  /* margin: 10px 0; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  flex: 1;
+  height: 2px;
+  background-color: hsla(0, 1%, 44%, 0.5);
+}
+
+.line-arrow img {
+  flex: 1;
+  padding: 15px;
+  max-width: 70px;
+  height: auto;
+  border-radius: 50%;
+  background-color: var(--purple);
+}
+
+.birthday-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.birthday-area h1 {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 60px;
+}
+.birthday-area span {
+  color: var(--purple);
+}
+
+/* @ footer styles */
+.attribution {
+  position: sticky;
+  margin: 20px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0 60px;
+  }
+  .text-input-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  input[type='number'] {
+    font-size: 14px;
+    width: 80px;
+    height: 50px;
+    padding: 0px 8px;
+    margin-left: 5px;
+  }
+
+  .line-arrow {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .line-arrow img {
+    margin: 10px 0;
+    max-width: 60px;
+  }
+
+  .birthday-area h1 {
+    font-weight: 800;
+    font-style: italic;
+    font-size: 45px;
+  }
+  .birthday-area span {
+    color: var(--purple);
+  }
+}

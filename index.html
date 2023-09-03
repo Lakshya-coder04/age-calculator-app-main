@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="text-input-area">
+      <div class="day"><label for="day">DAY</label>
+        <input type="number" name="day" id="day" placeholder="DD">
+        <span class="error" id="dayError">between 1 and 31</span>
+      </div>
+
+      <div class="month"> <label for="month">MONTH</label>
+        <input type="number" name="month" id="month" placeholder="MM" required>
+        <span class="error" id="monthError">between 1 and 12</span>
+      </div>
+
+      <div class="year"><label for="year">YEAR</label>
+        <input type="number" name="year" id="year" placeholder="YYYY">
+        <span class="error" id="yearError">between 1900 and this year</span>
+      </div>
+    </div>
+
+
+
+    <div class="line-arrow">
+      <hr><img id="image" src="./assets/images/icon-arrow.svg" alt="arrow-icon">
+    </div>
+
+    <div class="birthday-area">
+      <h1><span id="digit-year">- - </span>years</h1>
+      <h1><span id="digit-month">- - </span>months</h1>
+      <h1><span id="digit-day">- - </span>days</h1>
+    </div>
+
+  </div>
+
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Lakshya Birla</a>.
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
