@@ -21,6 +21,7 @@ function validateDay() {
   if (dayInput.value === '') {
     dayErr.textContent = '';
   }
+  return true;
 }
 
 // Function to validate month
@@ -36,6 +37,7 @@ function validateMonth() {
   if (monthInput.value === '') {
     monthErr.textContent = '';
   }
+  return true;
 }
 
 // Function to validate year
@@ -51,6 +53,7 @@ function validateYear() {
   if (yearInput.value === '') {
     yearErr.textContent = '';
   }
+  return true;
 }
 
 dayInput.addEventListener('input', validateDay);
@@ -71,7 +74,6 @@ function calculateAge() {
   //   console.log(currentDate.getDate());
 
   if (days < 0) {
-    months--;
     var lastMonthDate = new Date(
       currentDate.getFullYear(),
       currentDate.getMonth(),
@@ -92,15 +94,18 @@ function calculateAge() {
 }
 
 var image = document.getElementById('image');
+
 image.addEventListener('click', (e) => {
-  e.preventDefault();
+  if (validateDay() && validateMonth() && validateYear()) {
+    const age = calculateAge();
+    var digitYear = document.getElementById('digit-year');
+    var digitMonth = document.getElementById('digit-month');
+    var digitDay = document.getElementById('digit-day');
 
-  const age = calculateAge();
-  var digitYear = document.getElementById('digit-year');
-  var digitMonth = document.getElementById('digit-month');
-  var digitDay = document.getElementById('digit-day');
-
-  digitYear.textContent = age.years + ' ';
-  digitMonth.textContent = age.months + ' ';
-  digitDay.textContent = age.days + ' ';
+    digitYear.textContent = age.years + ' ';
+    digitMonth.textContent = age.months + ' ';
+    digitDay.textContent = age.days + ' ';
+  } else {
+    return false;
+  }
 });
